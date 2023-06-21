@@ -20,6 +20,8 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+
 Route::get('/customer', [CustomerController::class, 'index']);
 Route::post('/customer', [CustomerController::class, 'store']);
 Route::get('/register', [RegisterController::class, 'index']);
