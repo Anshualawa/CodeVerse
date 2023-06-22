@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RegisterController;
+use App\Models\Customers;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ Route::get('/home', function () {
     return view('home');
 });
 
+Route::get('/attack', function () {
+    $customers = Customers::all();
+});
 
 Route::get('/customer', [CustomerController::class, 'index']);
 Route::post('/customer', [CustomerController::class, 'store']);
