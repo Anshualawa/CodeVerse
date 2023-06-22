@@ -24,6 +24,8 @@ Route::get('/home', function () {
 
 Route::get('/attack', function () {
     $customers = Customers::all();
+    echo '<pre>';
+    print_r($customers->toArray());
 });
 
 Route::get('/customer', [CustomerController::class, 'index']);
