@@ -10,7 +10,8 @@
                         class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/register">Sign Up</a>
+                <span class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">SignUp</span class="nav-link">
+                {{-- <a class="nav-link" href="/register">Sign Up</a> --}}
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
