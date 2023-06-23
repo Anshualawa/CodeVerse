@@ -27,8 +27,8 @@ Route::get('/attack', function () {
     print_r($customers->toArray());
 });
 
+Route::get('/login', function () {
+    return view('login'); });
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
-Route::get('/login', [RegisterController::class, 'login']);
-Route::post('/login', [RegisterController::class, 'loginFail']);
 Route::get('/customer/view', [RegisterController::class, 'view']);

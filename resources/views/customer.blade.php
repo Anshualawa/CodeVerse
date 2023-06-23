@@ -26,7 +26,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xsm-6">
                                         <x-input type="email" name="email" label="Email" />
                                         <x-input type="text" name="status" label="Status" />
-                                        <x-input type="text" name="country" label="Conutry" />
+                                        <x-input type="text" name="country" label="Country" />
 
                                     </div>
                                 </div>
