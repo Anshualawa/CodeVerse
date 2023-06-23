@@ -25,9 +25,28 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xsm-6">
                                         <x-input type="email" name="email" label="Email" />
-                                        <x-input type="text" name="status" label="Status" />
-                                        <x-input type="text" name="country" label="Country" />
 
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Gender</label> <br>
+                                            <div class="form-check form-check-inline  border p-1 w-100 rounded">
+                                                <input  type="radio" name="gender" value="M" />
+                                                <label for="gender"> M  &nbsp;&nbsp;</label>
+                                                <input  type="radio" name="gender" value="F" />
+                                                <label for="gender">F &nbsp;&nbsp;</label>
+                                                <input  type="radio" name="gender" value="O" />
+                                                <label for="gender">Other</label>
+
+                                            </div>
+                                            {{-- <span class="text-danger">
+                                                    @error('gender')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </span> --}}
+                                        </div>
+
+
+                                        <x-input type="text" name="country" label="Country" />
                                     </div>
                                 </div>
                                 <div class="row">

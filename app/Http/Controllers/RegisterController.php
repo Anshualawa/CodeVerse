@@ -29,6 +29,7 @@ class RegisterController extends Controller
         $customer = new Customers;
         $customer->name = $request['name'];
         $customer->email = $request['email'];
+        $customer->gender = $request['gender'];
         $customer->state = $request['state'];
         $customer->status = $request['status'];
         $customer->address = $request['address'];
