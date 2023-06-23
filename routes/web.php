@@ -34,3 +34,4 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [RegisterController::class, 'login']);
 Route::post('/login', [RegisterController::class, 'loginFail']);
+Route::get('/customer/view', [CustomerController::class, 'view']);

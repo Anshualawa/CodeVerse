@@ -5,7 +5,7 @@
 
 
 
-@include('layouts.dialog-box')
+{{-- @include('layouts.dialog-box') --}}
 
 
 
