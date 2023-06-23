@@ -6,8 +6,8 @@
 @section('registration-form')
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-2"></div>
-            <div class="col-lg-6 col-md-6 col-sm-8">
+            <div class="col-lg-3 col-md-2 col-sm-2"></div>
+            <div class="col-lg-6 col-md-8 col-sm-8">
                 <div class="row p-5">
                     <h1>
                         Registration Form
@@ -17,13 +17,13 @@
                             @csrf
                             <div class="row">
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xsm-6">
                                         <x-input type="text" name="name" label="Name" />
                                         <x-input type="date" name="dob" label="Date of Birth" />
                                         <x-input type="text" name="state" label="State" />
 
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xsm-6">
                                         <x-input type="email" name="email" label="Email" />
                                         <x-input type="text" name="status" label="Status" />
                                         <x-input type="text" name="country" label="Conutry" />
@@ -32,11 +32,11 @@
                                 </div>
                                 <div class="row">
                                     <x-input type="text" name="address" label="Address" />
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xsm-6">
 
                                         <x-input type="password" name="password" label="Password" />
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xsm-6">
 
                                         <x-input type="password" name="password_confirmation" label="Conform Password" />
                                     </div>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-2"></div>
+            <div class="col-lg-3 col-md-2 col-sm-2"></div>
         </div>
     </div>
 @endsection

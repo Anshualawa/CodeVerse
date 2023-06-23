@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RegisterController;
 use App\Models\Customers;
 
@@ -28,10 +27,8 @@ Route::get('/attack', function () {
     print_r($customers->toArray());
 });
 
-Route::get('/customer', [CustomerController::class, 'index']);
-Route::post('/customer', [CustomerController::class, 'store']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [RegisterController::class, 'login']);
 Route::post('/login', [RegisterController::class, 'loginFail']);
-Route::get('/customer/view', [CustomerController::class, 'view']);
+Route::get('/customer/view', [RegisterController::class, 'view']);

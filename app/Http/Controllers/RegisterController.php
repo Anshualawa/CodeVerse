@@ -24,12 +24,14 @@ class RegisterController extends Controller
         $customer->passowrd = md5($request['password']);
         $customer->dob = $request['dob'];
         $customer->save();
-        return redirect('Customers/view');
+        return redirect('customer/view');
     }
 
     public function view()
     {
-        return view('customer-view');
+        $customer = Customers::all();
+        $data = compact('customer');
+        return view('customer-view')->with($data);
     }
 
 
