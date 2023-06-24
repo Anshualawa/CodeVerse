@@ -9,6 +9,7 @@
 
 
 <div class="container">
+    <a href="{{ route('register') }}"><button class="btn btn-primary d-inline-block m-2 float-end">Add</button></a>
     <div class="shadow border rounded">
         <table class="table table-hover table-secondary table-responsive">
             <thead>
@@ -21,6 +22,7 @@
                     <th scope="col">State</th>
                     <th scope="col">Country</th>
                     <th scope="col">Status</th>
+                    <th class="text-center" scope="col" colspan="2">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,12 +46,15 @@
                         <td>{{ $item->country }}</td>
                         <td>
                             @if ($item->status == '1')
-                                Active
+                                <span class="badge text-success"> Active </span>
                             @else
-                                Inactive
+                                <span class="badge text-danger">Inactive</span>
                             @endif
 
                         </td>
+                        <td><a href="#"><button class="btn btn-warning">Update</button></a></td>
+                        <td><a href="{{ route('customer.delete', ['id' => $item->customer_id]) }}"><button
+                                    class="btn btn-danger">Delete</button></a></td>
                     </tr>
                 @endforeach
             </tbody>

@@ -28,7 +28,18 @@ Route::get('/attack', function () {
 });
 
 Route::get('/login', function () {
-    return view('login'); });
-Route::get('/register', [RegisterController::class, 'index']);
+    return view('login');
+});
 Route::post('/register', [RegisterController::class, 'store']);
-Route::get('/customer/view', [RegisterController::class, 'view']);
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::get('/customer', [RegisterController::class, 'view']);
+Route::get('/customer/delete/{id}', [RegisterController::class, 'delete'])->name('customer.delete');
+
+
+
+
+
+// Route::get('get-all-session', function () {
+//     $session = session()->all();
+//     print_r($session);
+// });

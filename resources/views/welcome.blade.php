@@ -1,4 +1,7 @@
 @extends('layouts.header')
+@push('title')
+    <title> CodeVerse </title>
+@endpush
 
 <body class="text-info"
     style="background: url('https://scitechdaily.com/images/AI-Technology-Creation-Concept.gif');background-repeat:repeat;background-size:cover;">

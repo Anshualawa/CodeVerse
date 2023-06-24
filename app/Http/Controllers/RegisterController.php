@@ -31,13 +31,13 @@ class RegisterController extends Controller
         $customer->email = $request['email'];
         $customer->gender = $request['gender'];
         $customer->state = $request['state'];
-        $customer->status = $request['status'];
+        // $customer->status = $request['status'];
         $customer->address = $request['address'];
         $customer->country = $request['country'];
         $customer->passowrd = md5($request['password']);
         $customer->dob = $request['dob'];
         $customer->save();
-        return redirect('customer/view');
+        return redirect('customer');
     }
 
     public function view()
@@ -45,6 +45,15 @@ class RegisterController extends Controller
         $customer = Customers::all();
         $data = compact('customer');
         return view('customer-view')->with($data);
+    }
+
+    public function delete($id)
+    {
+        $Customer = Customers::find($id);
+        if (!is_null($Customer)) {
+            $Customer->delete();
+        }
+        return redirect('/customer');
     }
 
 }
