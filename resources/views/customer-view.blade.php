@@ -19,6 +19,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">DOB</th>
                     <th scope="col">Gender</th>
+                    <th scope="col">Address</th>
                     <th scope="col">State</th>
                     <th scope="col">Country</th>
                     <th scope="col">Status</th>
@@ -42,6 +43,7 @@
                             @endif
 
                         </td>
+                        <td>{{ $item->address }}</td>
                         <td>{{ $item->state }}</td>
                         <td>{{ $item->country }}</td>
                         <td>
