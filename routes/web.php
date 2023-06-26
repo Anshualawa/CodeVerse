@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Models\Customers;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +42,20 @@ Route::post('/customer/update/{id}', [RegisterController::class, 'update'])->nam
 
 
 
-// Route::get('get-all-session', function () {
-//     $session = session()->all();
-//     print_r($session);
-// });
+Route::get('get-all-session', function () {
+    $session = session()->all();
+    echo '<pre>';
+    print_r($session);
+    echo '</pre>';
+});
+
+Route::get('set-session', function (Request $request) {
+    $request->session()->put('name', 'Alawa');
+    $request->session()->put('id', '123');
+    return redirect('get-all-session');
+});
+
+Route::get('destroy-session', function () {
+    session()->forget('id');
+    return redirect('get-all-session');
+});
