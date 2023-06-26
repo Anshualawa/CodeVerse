@@ -27,7 +27,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($customer as $item)
+                @foreach ($Customer as $item)
                     <tr>
                         <td scope="row">{{ $item->customer_id }}</td>
                         <td>{{ $item->name }}</td>
@@ -54,7 +54,8 @@
                             @endif
 
                         </td>
-                        <td><a href="#"><button class="btn btn-warning">Update</button></a></td>
+                        <td><a href="{{ route('customer.edit', ['id' => $item->customer_id]) }}"><button
+                                    class="btn btn-warning">Update</button></a></td>
                         <td><a href="{{ route('customer.delete', ['id' => $item->customer_id]) }}"><button
                                     class="btn btn-danger">Delete</button></a></td>
                     </tr>

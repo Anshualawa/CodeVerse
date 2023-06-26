@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @push('title')
-    <title> Registration </title>
+    <title> {{ $title }} </title>
 @endpush
 
 @section('registration-form')
@@ -10,10 +10,10 @@
             <div class="col-lg-6 col-md-8 col-sm-8">
                 <div class="row p-5">
                     <h1>
-                        Registration Form
+                        {{$title}}
                     </h1>
                     <div class="shadow bg-light p-5 rounded-3 border">
-                        <form action="{{ url('') }}/register" method="post">
+                        <form action="{{ url('/') }}/register" method="post">
                             @csrf
                             <div class="row">
                                 <div class="row">
@@ -30,11 +30,11 @@
                                         <div class="mb-3">
                                             <label class="form-label">Gender</label> <br>
                                             <div class="form-check form-check-inline  border p-1 w-100 rounded">
-                                                <input  type="radio" name="gender" value="M" />
-                                                <label for="gender"> M  &nbsp;&nbsp;</label>
-                                                <input  type="radio" name="gender" value="F" />
+                                                <input type="radio" name="gender" value="M" />
+                                                <label for="gender"> M &nbsp;&nbsp;</label>
+                                                <input type="radio" name="gender" value="F" />
                                                 <label for="gender">F &nbsp;&nbsp;</label>
-                                                <input  type="radio" name="gender" value="O" />
+                                                <input type="radio" name="gender" value="O" />
                                                 <label for="gender">Other</label>
 
                                             </div>
