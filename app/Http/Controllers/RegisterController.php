@@ -50,6 +50,12 @@ class RegisterController extends Controller
         return view('customer-view')->with($data);
     }
 
+    public function trash()
+    {
+        $Customer = Customers::onlyTrashed()->get();
+        $data = compact('Customer');
+        return view('customer-trash')->with($data);
+    }
     public function delete($id)
     {
         $Customer = Customers::find($id);
@@ -58,6 +64,27 @@ class RegisterController extends Controller
         }
         return redirect('/customer');
     }
+
+    public function restore($id)
+    {
+        $Customer = Customers::withTrashed()->find($id);
+        if (!is_null($Customer)) {
+            $Customer->restore();
+            return redirect('/customer/trash');
+        }
+        return redirect('/customer/trash');
+    }
+
+    public function forcedelete($id)
+    {
+        $Customer = Customers::withTrashed()->find($id);
+        if (!is_null($Customer)) {
+            $Customer->forceDelete();
+            return redirect('/customer/trash');
+        }
+        return redirect('/customer/trash');
+    }
+
 
     public function edit($id)
     {
@@ -88,6 +115,19 @@ class RegisterController extends Controller
         $Customer->dob = $request['dob'];
         $Customer->save();
         return redirect('/customer');
+    }
+
+
+    public function upload(Request $request)
+    {
+        // echo '<pre>';
+        // $filename = time() . "-code." . $request->file('image')->getOriginalExtension();
+
+        // echo $request->file('image')->storeAs('uploads', $filename);
+        // echo $request->file('image')->getClientOrigina();
+        // echo $imageName = time() . 'code.' . $request->file('image')->getClientOriginalExtension();
+        // echo '<br>';
+        $request->file('image')->store('uploads');
     }
 
 }

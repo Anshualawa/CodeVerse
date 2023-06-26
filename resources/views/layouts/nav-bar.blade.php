@@ -25,7 +25,16 @@
         </ul>
         <form class="d-flex my-2 my-lg-0">
             <input class="form-control me-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-secondary text-light btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
 </nav>
+<div class="row">
+    <div class="container">
+        @if (session()->has('name'))
+            {{ session()->get('name') }}
+        @else
+            Guest
+        @endif
+    </div>
+</div>

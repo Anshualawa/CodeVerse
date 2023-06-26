@@ -34,10 +34,14 @@ Route::get('/login', function () {
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::get('/customer', [RegisterController::class, 'view']);
+Route::get('/customer/trash', [RegisterController::class, 'trash']);
 Route::get('/customer/delete/{id}', [RegisterController::class, 'delete'])->name('customer.delete');
+Route::get('/customer/permanent_delete/{id}', [RegisterController::class, 'forcedelete'])->name('customer.permanent_delete');
+Route::get('/customer/restore/{id}', [RegisterController::class, 'restore'])->name('customer.restore');
 Route::get('/customer/edit/{id}', [RegisterController::class, 'edit'])->name('customer.edit');
 Route::post('/customer/update/{id}', [RegisterController::class, 'update'])->name('customer.update');
 
+Route::post('/upload', [RegisterController::class, 'upload'])->name('upload');
 
 
 
@@ -56,6 +60,10 @@ Route::get('set-session', function (Request $request) {
 });
 
 Route::get('destroy-session', function () {
-    session()->forget('id');
+    session()->forget(['name', 'id']);
     return redirect('get-all-session');
+});
+
+Route::get('/upload', function () {
+    return view('upload');
 });
