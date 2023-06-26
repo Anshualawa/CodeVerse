@@ -12,7 +12,7 @@
                 <div class="col-lg-3 py-5">
                 </div>
                 <div class="col-lg-6 py-5 clearfix">
-                    <a href="/login">
+                    <a href="/home">
                         <div class="row my-5">
                             <div class="col-lg-3 px-1 text-end ">
                                 <img src="https://uploads-ssl.webflow.com/6165b74221c0712ba456e3b6/6165b8f90ce1a399de9cef63_Logo%20Mark.svg"

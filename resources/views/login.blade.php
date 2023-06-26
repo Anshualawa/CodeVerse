@@ -15,7 +15,7 @@
             <div class="row py-5">
                 <h1>Login Form</h1>
                 <div class="shadow bg-light p-5 rounded-3 border ">
-                    <form action="{{ url('/') }}/login" method="post">
+                    <form action="{{ url('/') }}/login_" method="post">
                         @csrf
 
                         <x-input type="email" name="email" label="User ID" />
