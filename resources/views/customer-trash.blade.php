@@ -1,7 +1,7 @@
 @extends('layouts.header')
 
 @push('title')
-    <title> Customers </title>
+    <title> Trash Data </title>
 @endpush
 
 @include('layouts.nav-bar')
@@ -9,13 +9,12 @@
 
 
 <div class="container">
-    <div class="row ">
-        <div class="col-6  P-1">
-            <h2>Customer Data</h2>
+    <div class="row">
+        <div class="col-lg-6 text-secondary">
+            <h2>Deleted Customer Data</h2>
         </div>
-        <div class="col-6 d-inline-block ">
-            <a href="{{ route('register') }}"><button class="btn btn-primary  m-2 float-end">Add</button></a>
-            <a href="{{ url('customer/trash') }}"><button class="btn btn-danger  m-2 float-end">Trash</button></a>
+        <div class="col-lg-6 d-inline-block">
+            <a href="{{ url('customer') }}"><button class="btn btn-primary  m-2 float-end">Customer View</button></a>
         </div>
     </div>
     <div class="shadow border rounded">
@@ -62,10 +61,10 @@
                             @endif
 
                         </td>
-                        <td><a href="{{ route('customer.edit', ['id' => $item->customer_id]) }}"><button
-                                    class="btn btn-success">Edit</button></a></td>
-                        <td><a href="{{ route('customer.delete', ['id' => $item->customer_id]) }}"><button
-                                    class="btn btn-warning">Trash</button></a></td>
+                        <td><a href="{{ route('customer.restore', ['id' => $item->customer_id]) }}"><button
+                                    class="btn btn-warning">Restore</button></a></td>
+                        <td><a href="{{ route('customer.permanent_delete', ['id' => $item->customer_id]) }}"><button
+                                    class="btn btn-danger">Delete</button></a></td>
                     </tr>
                 @endforeach
             </tbody>

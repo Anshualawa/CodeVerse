@@ -9,7 +9,10 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('customer');
+        $url = url('/customer');
+        $title = 'Customer Registration';
+        $data = compact('url', 'title');
+        return view('customer')->with($data);
     }
     public function store(Request $request)
     {
@@ -26,25 +29,105 @@ class RegisterController extends Controller
             ]
         );
 
-        $customer = new Customers;
-        $customer->name = $request['name'];
-        $customer->email = $request['email'];
-        $customer->gender = $request['gender'];
-        $customer->state = $request['state'];
-        $customer->status = $request['status'];
-        $customer->address = $request['address'];
-        $customer->country = $request['country'];
-        $customer->passowrd = md5($request['password']);
-        $customer->dob = $request['dob'];
-        $customer->save();
-        return redirect('customer/view');
+        $Customer = new Customers;
+        $Customer->name = $request['name'];
+        $Customer->email = $request['email'];
+        $Customer->gender = $request['gender'];
+        $Customer->state = $request['state'];
+        // $Customer->status = $request['status'];
+        $Customer->address = $request['address'];
+        $Customer->country = $request['country'];
+        $Customer->passowrd = md5($request['password']);
+        $Customer->dob = $request['dob'];
+        $Customer->save();
+        return redirect('/customer');
     }
 
     public function view()
     {
-        $customer = Customers::all();
-        $data = compact('customer');
+        $Customer = Customers::all();
+        $data = compact('Customer');
         return view('customer-view')->with($data);
+    }
+
+    public function trash()
+    {
+        $Customer = Customers::onlyTrashed()->get();
+        $data = compact('Customer');
+        return view('customer-trash')->with($data);
+    }
+    public function delete($id)
+    {
+        $Customer = Customers::find($id);
+        if (!is_null($Customer)) {
+            $Customer->delete();
+        }
+        return redirect('/customer');
+    }
+
+    public function restore($id)
+    {
+        $Customer = Customers::withTrashed()->find($id);
+        if (!is_null($Customer)) {
+            $Customer->restore();
+            return redirect('/customer/trash');
+        }
+        return redirect('/customer/trash');
+    }
+
+    public function forcedelete($id)
+    {
+        $Customer = Customers::withTrashed()->find($id);
+        if (!is_null($Customer)) {
+            $Customer->forceDelete();
+            return redirect('/customer/trash');
+        }
+        return redirect('/customer/trash');
+    }
+
+
+    public function edit($id)
+    {
+        $Customer = Customers::find($id);
+
+        if (is_null($Customer)) {
+            // $Customer->delete();
+            return redirect('/customer');
+        } else {
+            $url = url('/customer/update') . '/' . $id;
+            $title = 'Customer Update';
+            $data = compact('Customer', 'url', 'title');
+            return view('edit')->with($data);
+        }
+
+    }
+
+    public function update($id, Request $request)
+    {
+        $Customer = Customers::find($id);
+        $Customer->name = $request['name'];
+        $Customer->email = $request['email'];
+        $Customer->gender = $request['gender'];
+        $Customer->state = $request['state'];
+        // $Customer->status = $request['status'];
+        $Customer->address = $request['address'];
+        $Customer->country = $request['country'];
+        $Customer->dob = $request['dob'];
+        $Customer->save();
+        return redirect('/customer');
+    }
+
+
+    public function upload(Request $request)
+    {
+        // echo '<pre>';
+        // $filename = time() . "-code." . $request->file('image')->getOriginalExtension();
+
+        // echo $request->file('image')->storeAs('uploads', $filename);
+        // echo $request->file('image')->getClientOrigina();
+        // echo $imageName = time() . 'code.' . $request->file('image')->getClientOriginalExtension();
+        // echo '<br>';
+        $request->file('image')->store('uploads');
     }
 
 }
