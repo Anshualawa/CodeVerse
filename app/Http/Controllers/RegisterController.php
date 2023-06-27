@@ -21,7 +21,7 @@ class RegisterController extends Controller
                 'name' => 'required',
                 'email' => 'required|email',
                 'address' => 'required',
-                'password' => 'required|confirmed',
+                'password' => 'required|confirmed|min:8|max:15',
                 'password_confirmation' => 'required'
             ]
         );

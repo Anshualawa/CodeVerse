@@ -46,7 +46,7 @@
                                         </div>
 
 
-                                        <x-input type="text" name="country" label="Country" />
+                                        <x-input type="text" name="country" label="Country"  />
                                     </div>
                                 </div>
                                 <div class="row">
