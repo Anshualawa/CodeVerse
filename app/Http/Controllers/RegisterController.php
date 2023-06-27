@@ -125,9 +125,9 @@ class RegisterController extends Controller
 
         // echo $request->file('image')->storeAs('uploads', $filename);
         // echo $request->file('image')->getClientOrigina();
-        // echo $imageName = time() . 'code.' . $request->file('image')->getClientOriginalExtension();
+        echo $imageName = time() . 'code.' . $request->file('image')->getClientOriginalExtension();
         // echo '<br>';
-        $request->file('image')->store('uploads');
+        $request->file('image')->storeAs('uploads',$imageName);
     }
 
 }
