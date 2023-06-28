@@ -61,6 +61,7 @@ class RegisterController extends Controller
         $Customer = Customers::find($id);
         if (!is_null($Customer)) {
             $Customer->delete();
+            return redirect('/customer');
         }
         return redirect('/customer');
     }
@@ -70,7 +71,7 @@ class RegisterController extends Controller
         $Customer = Customers::withTrashed()->find($id);
         if (!is_null($Customer)) {
             $Customer->restore();
-            return redirect('/customer/trash');
+            return redirect('/customer/trash')->with('success','Restord Success');
         }
         return redirect('/customer/trash');
     }
@@ -80,9 +81,9 @@ class RegisterController extends Controller
         $Customer = Customers::withTrashed()->find($id);
         if (!is_null($Customer)) {
             $Customer->forceDelete();
-            return redirect('/customer/trash');
+            return redirect('/customer/trash')->with('success','permanently Deleted !');
         }
-        return redirect('/customer/trash');
+        return redirect('/customer/trash')->with('info','Customer Not Found');
     }
 
 
