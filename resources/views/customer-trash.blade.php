@@ -17,7 +17,7 @@
             <a href="{{ url('customer') }}"><button class="btn btn-primary  m-2 float-end">Customer View</button></a>
         </div>
     </div>
-    <div class="shadow border rounded">
+    <div class="shadow border table-responsive rounded">
         <table class="table table-hover table-secondary table-responsive">
             <thead>
                 <tr>

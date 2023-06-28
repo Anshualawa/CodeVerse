@@ -18,8 +18,8 @@
             <a href="{{ url('customer/trash') }}"><button class="btn btn-danger  m-2 float-end">Trash</button></a>
         </div>
     </div>
-    <div class="shadow border rounded">
-        <table class="table table-hover table-secondary table-responsive">
+    <div class="shadow border table-responsive rounded">
+        <table class="table  table-hover table-secondary table-responsive">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
