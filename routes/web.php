@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Models\Customers;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,4 +71,17 @@ Route::get('destroy-session', function () {
 
 Route::get('/upload', function () {
     return view('upload');
+});
+
+
+
+Route::get('/sweet', function () {
+    Alert::success('Hello');
+    Alert::info('First you have to Register');
+    Alert::html('Rs. 750 /-', 'Trangection Successfuly', 'success');
+    // Alert::html('Rs. 750 /-', 'Pandding', 'warning');
+    alert('Rs. 750 /-', 'Trangaction Successfuly', 'success');
+    // Alert::warning('Something went wroung');
+    toast('your post as been submited!','success');
+    return view('/home');
 });
