@@ -40,7 +40,7 @@ class RegisterController extends Controller
         $Customer->passowrd = md5($request['password']);
         $Customer->dob = $request['dob'];
         $Customer->save();
-        return redirect('/customer');
+        return redirect('/customer')->with('success','Register Successful!');
     }
 
     public function view()
@@ -104,6 +104,14 @@ class RegisterController extends Controller
 
     public function update($id, Request $request)
     {
+        $request->validate(
+            [
+                'name' => 'required',
+                'email' => 'required|email',
+                'address' => 'required',
+            ]
+        );
+
         $Customer = Customers::find($id);
         $Customer->name = $request['name'];
         $Customer->email = $request['email'];
@@ -114,7 +122,7 @@ class RegisterController extends Controller
         $Customer->country = $request['country'];
         $Customer->dob = $request['dob'];
         $Customer->save();
-        return redirect('/customer');
+        return redirect('/customer')->with('success','Update Successfully');
     }
 
 
