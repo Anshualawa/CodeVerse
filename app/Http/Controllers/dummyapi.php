@@ -38,4 +38,31 @@ class dummyapi extends Controller
             return ['result' => 'Operation Failed'];
         }
     }
+
+    function update(Request $request)
+    {
+        $device = Device::find($request->id);
+        $device->name = $request->name;
+        $result = $device->save();
+        if ($result) {
+
+            return ['result' => 'Data has been updated'];
+        } else {
+
+            return ['result' => 'Operation Failed'];
+        }
+    }
+
+    function delete($id)
+    {
+        $device = Device::find($id);
+        $result = $device->delete();
+        if ($result) {
+
+            return ['result' => 'recored has been deleted'];
+        } else {
+
+            return ['result' => 'Operation Failed'];
+        }
+    }
 }
