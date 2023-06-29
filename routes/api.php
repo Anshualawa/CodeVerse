@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\dummyapi;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,5 @@ Route::post('/books', 'ApiController@store');
 Route::get('/books/{id}', 'ApiController@show');
 Route::put('/books/{id}', 'ApiController@update');
 Route::delete('/books/{id}', 'ApiController@destroy');
+
+Route::get('data', [dummyapi::class, 'getData']);
