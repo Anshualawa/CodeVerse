@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\home;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Models\Customers;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Controllers\phpContentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,6 @@ use RealRashid\SweetAlert\Facades\Alert;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', function () {
-    return view('home');
-});
 
 Route::get('/attack', function () {
     $customers = Customers::all();
@@ -34,6 +33,7 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/home', [home::class, 'home']);
 Route::get('/login_', [LoginController::class, 'login_1']);
 Route::post('/login_', [LoginController::class, 'login_2']);
 Route::post('/register', [RegisterController::class, 'store']);
@@ -48,6 +48,8 @@ Route::post('/customer/update/{id}', [RegisterController::class, 'update'])->nam
 
 Route::post('/upload', [RegisterController::class, 'upload'])->name('upload');
 
+Route::get('/php', [phpContentController::class, 'phpcontent']);
+Route::post('/php', [phpContentController::class, 'view']);
 
 
 
@@ -82,6 +84,6 @@ Route::get('/sweet', function () {
     // Alert::html('Rs. 750 /-', 'Pandding', 'warning');
     alert('Rs. 750 /-', 'Trangaction Successfuly', 'success');
     // Alert::warning('Something went wroung');
-    toast('your post as been submited!','success');
+    toast('your post as been submited!', 'success');
     return view('/home');
 });

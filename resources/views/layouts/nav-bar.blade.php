@@ -16,9 +16,9 @@
             <li class="nav-item"><a class="nav-link" href="{{ url('/customer') }}">Dashboard</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    aria-haspopup="true" aria-expanded="false">Upload Content</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="#">Action 1</a>
+                    <a class="dropdown-item" href="{{ url('/php') }}">PHP Content</a>
                     <a class="dropdown-item" href="#">Action 2</a>
                 </div>
             </li>
