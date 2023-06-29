@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-dark px-5 shadow border border-success"
+<nav class="navbar navbar-expand-sm navbar-dark px-5 shadow border border-success fixed-top"
     style="background: linear-gradient(45deg, rgb(185, 193, 27), rgb(69, 182, 73)) !important;">
     <a class="navbar-brand" href="{{ url('/') }}">CodeVerse</a>
     <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
@@ -29,7 +29,7 @@
         </form>
     </div>
 </nav>
-<div class="row">
+<div class="row my-5">
     <div class="container">
         @if (session()->has('name'))
             {{ session()->get('name') }}

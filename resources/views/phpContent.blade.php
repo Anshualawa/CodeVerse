@@ -16,7 +16,7 @@
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Summary</label>
-            <textarea class="form-control" name="summary" id="" rows="5">Write you content here ......</textarea>
+            <textarea class="form-control" name="summary" id="" rows="5" placeholder="Write you content here ......"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <a class="btn btn-primary" href="/home">Canchel</a>

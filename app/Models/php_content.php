@@ -10,4 +10,9 @@ class php_content extends Model
     use HasFactory;
     protected $table = "php_content";
     protected $primaryKey = 'content_id';
+
+    public function getUpdated_atAttribute($value) // Acceeser
+    {
+        return date("d-M-Y", strtotime($value));
+    }
 }

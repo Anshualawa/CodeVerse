@@ -21,8 +21,10 @@ class phpContentController extends Controller
             ]
         );
         $content = new php_content;
-
-        return redirect('/php');
+        $content->headline = $request['headline'];
+        $content->summary = $request['summary'];
+        $content->save();
+        return redirect('/php')->with('success', 'Content Uploaded Successful!');
     }
 
 }

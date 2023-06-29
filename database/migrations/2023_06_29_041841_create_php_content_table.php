@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('php_content', function (Blueprint $table) {
             $table->id('conten_id');
             $table->string('headline');
-            $table->string('summray',500);
+            $table->string('summary',2000);
             $table->timestamps();
         });
     }
