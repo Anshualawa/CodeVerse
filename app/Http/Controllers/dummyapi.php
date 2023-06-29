@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Device;
 
 class dummyapi extends Controller
 {
@@ -17,5 +18,24 @@ class dummyapi extends Controller
         ];
 
         return $data;
+    }
+
+    function list($id = null)
+    {
+        return $id ? Device::find($id) : Device::all();
+    }
+
+    function add(Request $request)
+    {
+        $device = new Device;
+        $device->name = $request->name;
+        $result = $device->save();
+        if ($result) {
+
+            return ['result' => 'Data has been saved'];
+        } else {
+
+            return ['result' => 'Operation Failed'];
+        }
     }
 }

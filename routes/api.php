@@ -28,3 +28,5 @@ Route::put('/books/{id}', 'ApiController@update');
 Route::delete('/books/{id}', 'ApiController@destroy');
 
 Route::get('data', [dummyapi::class, 'getData']);
+Route::get('data/{id?}', [dummyapi::class, 'list']);
+Route::post('data', [dummyapi::class, 'add']);
