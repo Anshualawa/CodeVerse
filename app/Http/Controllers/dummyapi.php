@@ -65,4 +65,10 @@ class dummyapi extends Controller
             return ['result' => 'Operation Failed'];
         }
     }
+
+    function search($name)
+    {
+
+        return Device::where("name", "like", "%" . $name . "%")->get();
+    }
 }
