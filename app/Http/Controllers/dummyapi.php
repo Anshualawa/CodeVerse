@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Device;
+use Validator;
 
 class dummyapi extends Controller
 {
@@ -70,5 +71,33 @@ class dummyapi extends Controller
     {
 
         return Device::where("name", "like", "%" . $name . "%")->get();
+    }
+
+    function testData(Request $request)
+    {
+        $rules = array(
+            'name' => 'required|min:8|max:15'
+        );
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(),401);
+        } else {
+            $device = new Device;
+            $device->name = $request->name;
+            $result = $device->save();
+            if ($result) {
+
+                return [
+                    'Result' => 'Data has been saved',
+                    'statu code ' => 200
+                ];
+            } else {
+
+                return [
+                    'Result' => 'Operation failed',
+                    'Status' => 500
+                ];
+            }
+        }
     }
 }

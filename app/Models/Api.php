@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Api extends Model
 {
     use HasFactory;
+    protected $table = "customers";
+    protected $primaryKey = 'customer_id';
 }

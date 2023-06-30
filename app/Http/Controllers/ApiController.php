@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Api;
 
 class ApiController extends Controller
 {
@@ -11,7 +12,7 @@ class ApiController extends Controller
      */
     public function index()
     {
-        echo 'Index';
+        return Api::all();
     }
 
     /**
