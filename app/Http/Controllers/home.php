@@ -11,6 +11,7 @@ class home extends Controller
     {
         $content = php_content::all();
         $data = compact('content');
+        toast('php content open Success ', 'success');
         return view('home')->with($data);
     }
 }
