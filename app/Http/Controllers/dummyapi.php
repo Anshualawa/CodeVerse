@@ -80,7 +80,7 @@ class dummyapi extends Controller
         );
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
-            return response()->json($validator->errors(),401);
+            return response()->json($validator->errors(), 401);
         } else {
             $device = new Device;
             $device->name = $request->name;
