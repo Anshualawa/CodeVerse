@@ -41,7 +41,7 @@
             </a>
         </div>
         <div class="col p-2">
-            <a href="" class="btn btn-light shadow border ">
+            <a href="{{ url('/atm-bank/statment') }}" class="btn btn-light shadow border ">
                 <span>
                     <h3>Mini Statement</h3>
                 </span>

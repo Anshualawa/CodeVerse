@@ -21,12 +21,17 @@ class AtmBank extends Controller
         echo 'Store';
     }
 
-    public function show(string $id)
+    public function show(Request $request)
     {
-
-        return view('AtmBank/balance');
+        $data = $request->accountnumber;
+        $data = compact('data');
+        return view('AtmBank/balance')->with($data);
     }
 
+    function Summary()
+    {
+        return view('AtmBank/openAccount');
+    }
     public function edit(string $id)
     {
         echo 'edit';
