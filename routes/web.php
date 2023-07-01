@@ -8,6 +8,7 @@ use App\Models\Customers;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\phpContentController;
+use App\Http\Controllers\AtmBank;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,3 +88,15 @@ Route::get('/sweet', function () {
     toast('your post as been submited!', 'success');
     return view('/home');
 });
+
+
+
+
+
+// ATM 
+Route::get('/atm-bank', [AtmBank::class, 'index']);
+Route::get('/atm-bank/login', [AtmBank::class, 'create']);
+Route::post('/atm-bank/login', [AtmBank::class, 'store']);
+Route::get('/atm-bank/balance/{id,pin}', [AtmBank::class, 'show']);
+Route::get('/atm-bank', [AtmBank::class, 'index']);
+Route::get('/atm-bank', [AtmBank::class, 'index']);

@@ -16,12 +16,13 @@
             <li class="nav-item"><a class="nav-link" href="{{ url('/customer') }}">Dashboard</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Upload Content</a>
+                aria-haspopup="true" aria-expanded="false">Upload Content</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
                     <a class="dropdown-item" href="{{ url('/php') }}">PHP Content</a>
                     <a class="dropdown-item" href="#">Action 2</a>
                 </div>
             </li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('/atm-bank') }}">ATM</a></li>
         </ul>
         <form class="d-flex my-2 my-lg-0">
             <input class="form-control me-sm-2" type="text" placeholder="Search">
