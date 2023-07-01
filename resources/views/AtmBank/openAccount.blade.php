@@ -11,6 +11,10 @@
         </span>
     </div>
     <hr>
+
+
+    @include('AtmBank/layout/back_btn')
+
 </div>
 
 

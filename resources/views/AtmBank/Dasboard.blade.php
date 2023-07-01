@@ -21,6 +21,17 @@
         <div class="col p-2">
             <a href="{{ url('/atm-bank/login') }}" class="btn btn-light shadow border ">
                 <span>
+                    <h3>Check Balance</h3>
+                </span>
+                <span>
+                    <img src="https://sbi.co.in/documents/136/73003/debit_card.png/58a6832b-deaa-c3d8-f22d-c90c0c2bf785?t=1560335158596"
+                        class="img-fluid rounded-top" width="100vh" alt="">
+                </span>
+            </a>
+        </div>
+        <div class="col p-2">
+            <a href="{{ url('/atm-bank/login') }}" class="btn btn-light shadow border ">
+                <span>
                     <h3>Withdraw Money</h3>
                 </span>
                 <span>

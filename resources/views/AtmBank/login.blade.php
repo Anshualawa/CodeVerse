@@ -20,12 +20,12 @@
                     <div class="mb-3">
                         <label for="accountnumber" class="form-label">Account Number</label>
                         <input type="text" class="form-control" name="accountnumber" id="accountnumber"
-                            aria-describedby="helpId" placeholder="">
+                            value="{{ old('accountnumber') }}" aria-describedby="helpId" placeholder="">
                         {{-- <small id="helpId" class="form-text text-muted">Help text</small> --}}
                     </div>
                     <div class="mb-3">
                         <label for="customerpin" class="form-label">Secret PIN Number</label>
-                        <input type="text" class="form-control" name="customerpin" id="customerpin"
+                        <input type="password" class="form-control" name="customerpin" id="customerpin"
                             aria-describedby="helpId" placeholder="">
                         {{-- <small id="helpId" class="form-text text-muted">Help text</small> --}}
                     </div>

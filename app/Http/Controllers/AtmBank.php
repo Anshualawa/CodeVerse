@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AtmBank extends Controller
 {
@@ -23,13 +24,21 @@ class AtmBank extends Controller
 
     public function show(Request $request)
     {
+        // $request->validate([
+        //     [
+        //         'accountnumber' => 'required',
+        //         'customerpin' => 'required'
+        //     ]
+        // ]);
         $data = $request->accountnumber;
         $data = compact('data');
+        Alert::success('Account Details');
         return view('AtmBank/balance')->with($data);
     }
 
     function Summary()
     {
+        Alert::success('My Bank of India  Statement ');
         return view('AtmBank/openAccount');
     }
     public function edit(string $id)
