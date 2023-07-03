@@ -12,10 +12,12 @@
 <div class="container">
     <div class="row justify-content-center align-items-center text-center  p-5 g-2">
         <span>
-            <img src="https://bank.sbi/o/SBI-Theme/images/custom/logo.png" class="img-fluid rounded-top" alt="">
+            <img src="" class="img-fluid rounded-top" alt="">
+            <h1>My Bank of India</h1>
+            {{-- <img src="https://bank.sbi/o/SBI-Theme/images/custom/logo.png" class="img-fluid rounded-top" alt=""> --}}
         </span>
     </div>
-    <span class=""><a class="btn text-primary" href="">Create Account</a></span>
+    <span class=""><a class="btn text-primary" href="{{ route('new-register') }}">Create Account</a></span>
     <hr>
     <div class="row justify-content-center align-items-center text-center p-5   g-2 ">
         <div class="col p-2">

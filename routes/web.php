@@ -100,3 +100,4 @@ Route::post('/atm-bank/login', [AtmBank::class, 'show']);
 // Route::get('/atm-bank/balance/{id,pin}', [AtmBank::class, 'show']);
 Route::get('/atm-bank/statment', [AtmBank::class, 'Summary']);
 Route::get('/atm-bank', [AtmBank::class, 'index']);
+Route::get('/atm-new-user', [AtmBank::class, 'create'])->name('new-register');

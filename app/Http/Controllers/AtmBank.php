@@ -14,7 +14,7 @@ class AtmBank extends Controller
 
     public function create()
     {
-        return view('AtmBank/login');
+        return view('AtmBank/openAccount');
     }
 
     public function store(Request $request)
@@ -39,7 +39,7 @@ class AtmBank extends Controller
     function Summary()
     {
         Alert::success('My Bank of India  Statement ');
-        return view('AtmBank/openAccount');
+        return view('AtmBank/statment');
     }
     public function edit(string $id)
     {
