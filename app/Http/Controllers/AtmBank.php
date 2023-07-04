@@ -12,6 +12,10 @@ class AtmBank extends Controller
         return view('AtmBank/Dasboard');
     }
 
+    public function login()
+    {
+        return view('AtmBank/login');
+    }
     public function create()
     {
         return view('AtmBank/openAccount');
@@ -38,9 +42,11 @@ class AtmBank extends Controller
 
     function Summary()
     {
+
         Alert::success('My Bank of India  Statement ');
         return view('AtmBank/statment');
     }
+
     public function edit(string $id)
     {
         echo 'edit';
