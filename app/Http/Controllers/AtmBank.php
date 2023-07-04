@@ -21,6 +21,12 @@ class AtmBank extends Controller
         return view('AtmBank/openAccount');
     }
 
+    function registered(Request $request)
+    {
+        echo '<pre>';
+        print_r($request->all());
+        die;
+    }
     public function store(Request $request)
     {
         echo 'Store';

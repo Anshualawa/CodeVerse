@@ -14,7 +14,7 @@
 
     <div class="container m-5 p-5">
         <div class="row justify-content-center align-items-center g-2">
-            <form action="" method="post">
+            <form action="{{ url('/atm-new-user') }}" method="post">
                 @csrf
                 <div class="row justify-content-center align-items-center g-2">
                     <div class="col">
