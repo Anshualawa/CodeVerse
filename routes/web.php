@@ -102,6 +102,8 @@ Route::get('/atm-bank/statment', [AtmBank::class, 'Summary']);
 Route::get('/atm-bank', [AtmBank::class, 'index']);
 Route::get('/atm-new-user', [AtmBank::class, 'create'])->name('new-register');
 Route::post('/atm-new-user', [AtmBank::class, 'registered'])->name('registered');
-Route::get('/atm-customer',[AtmBank::class,'customers']);
+Route::get('/atm-customer', [AtmBank::class, 'customers']);
 
 Route::get('/atm-Admin', [AtmBank::class, 'Admin'])->name('admin');
+Route::post('/atm-Admin', [AtmBank::class, 'AdminPost'])->name('adminpost');
+Route::get('/atm-admin-logut', [AtmBank::class, 'logout'])->name('logout');

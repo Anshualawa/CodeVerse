@@ -18,7 +18,7 @@
         </span>
     </div>
     <span class=""><a class="btn text-primary" href="{{ route('new-register') }}">Create Account</a></span>
-    <span class="text-end"><a class="btn text-primary" href="{{ route('admin') }}">Admin</a></span>
+    <span class="text-end"><a class="btn text-primary" href="{{ route('adminpost') }}">Admin</a></span>
     <hr>
     <div class="row justify-content-center align-items-center text-center p-5   g-2 ">
         <div class="col p-2">

@@ -4,10 +4,7 @@
 
 
 
-<h1>Addmin </h1>
-
-
-
+@include('AtmBank.layout.allCustomer')
 
 
 

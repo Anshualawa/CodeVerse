@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AtmAdmin;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\mybank;
+
 
 class AtmBank extends Controller
 {
@@ -99,7 +101,36 @@ class AtmBank extends Controller
 
     function Admin()
     {
-        Alert::html('Hello Sir Welcome to our Addmin Panel');
-        return view('AtmBank/AdminDashboard');
+
+        return view('AtmBank/layout/adminlogin');
+    }
+    function AdminPost(Request $request)
+    {
+
+        $request->validate([
+            'email' => 'required',
+            'userID' => 'required'
+        ]);
+        $id = $request->email;
+        $passwd = $request->userID;
+        $admin = AtmAdmin::all();
+        if ($id == $admin[0]->email && $passwd == $admin[0]->adminID) {
+
+            Alert::success('ID and Password Match  Access Granted');
+            $customer = mybank::all();
+            $data = compact('customer');
+            return view('AtmBank/AdminDashboard')->with($data);
+        } else {
+
+            Alert::warning("ID and Password don't Match. Access denied");
+            return view('AtmBank/layout/adminlogin');
+        }
+    }
+
+    function logout()
+    {
+        Alert::success('Admin Logout success');
+        return view('AtmBank/Dasboard');
+
     }
 }
