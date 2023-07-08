@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class mybank extends Model
 {
     use HasFactory;
-    use SoftDeletes;
+    // use SoftDeletes;
     protected $table = "mybank";
     protected $primaryKey = 'id';
 }

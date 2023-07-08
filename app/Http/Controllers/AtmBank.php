@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\mybank;
 
 class AtmBank extends Controller
 {
@@ -23,9 +24,37 @@ class AtmBank extends Controller
 
     function registered(Request $request)
     {
-        echo '<pre>';
-        print_r($request->all());
-        die;
+        $request->validate([
+            'email' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'dob' => 'required',
+        ]);
+        $bank = new mybank;
+        $bank->email = $request['email'];
+        $bank->firstname = $request['firstname'];
+        $bank->lastname = $request['lastname'];
+        $bank->date_of_birth = $request['dob'];
+        $bank->contact_number = $request['contact_number'];
+        $bank->gender = $request['gender'];
+        $result = $bank->save();
+        if ($result) {
+            Alert::success('Application Submited Success');
+            return view('AtmBank/login');
+        } else {
+            Alert::warning('Something want wroungh');
+            return view('AtmBank/openAccount');
+        }
+
+    }
+    function customers()
+    {
+        $customer = mybank::all();
+        $data = compact('customer');
+        // echo '<pre>';
+        // print_r($customer->toArray());
+        // exit;
+        return view('AtmBank/customers')->with($data);
     }
     public function store(Request $request)
     {
@@ -65,5 +94,12 @@ class AtmBank extends Controller
     public function destroy(string $id)
     {
         echo 'Destroy';
+    }
+
+
+    function Admin()
+    {
+        Alert::html('Hello Sir Welcome to our Addmin Panel');
+        return view('AtmBank/AdminDashboard');
     }
 }
