@@ -18,10 +18,10 @@
             </li>
         </ul>
         <div class="row justify-content-center align-items-center text-light g-2">
-            <div class="col">Admin </div>
-            <div class="col">{{ '| ' . date('H:i:s', time()) . '| '  }} </div>
+            <div class="col"> {{ $_SESSION['loger'] }} </div>
+            {{-- <div class="col">{{ '| ' . date('H:i:s', time()) . '| '  }} </div> --}}
             <div class="col">
-                <span><a class="nav-link active" href="{{ route('logout') }}">Logout</a></span>
+                <span><a class="nav-link active text-danger" href="{{ route('logout') }}">Logout</a></span>
             </div>
         </div>
     </div>

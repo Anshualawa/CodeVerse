@@ -5,7 +5,7 @@
 @endpush
 <div class="container my-5 p-5">
 
-    <form action="{{ url('/') }}/php" method="POST" class="bg-light shadow p-5 rounded-4">
+    <form action="{{ url('/') }}/php" method="POST" class="bg-light shadow p-5 border rounded-4">
         @csrf
         <div class="form-check form-check-inline my-4">
             <input class="form-check-input" type="radio" name="sub_code" id="python3" value="100">
@@ -32,8 +32,9 @@
             <textarea class="form-control" name="summary" id="" rows="5" placeholder="Write content here ......"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a class="btn btn-primary" href="/home">Canchel</a>
+        <button class="btn btn-primary" type="reset">Reset</button>
     </form>
 </div>
+@include('layouts.back_btn')
 
 @include('layouts.footer')

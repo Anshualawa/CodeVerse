@@ -14,6 +14,4 @@
 </head>
 
 <body>
-    <header>
-        <!-- place navbar here -->
-    </header>
+

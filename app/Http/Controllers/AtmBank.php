@@ -116,6 +116,9 @@ class AtmBank extends Controller
         $admin = AtmAdmin::all();
         if ($id == $admin[0]->email && $passwd == $admin[0]->adminID) {
 
+            session_start();
+            $_SESSION['loger'] = $admin[0]->email;
+
             Alert::success('ID and Password Match  Access Granted');
             $customer = mybank::all();
             $data = compact('customer');
@@ -129,6 +132,8 @@ class AtmBank extends Controller
 
     function logout()
     {
+        session_start();
+        session_destroy();
         Alert::success('Admin Logout success');
         return view('AtmBank/Dasboard');
 

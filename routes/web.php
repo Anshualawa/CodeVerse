@@ -34,7 +34,7 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/home', [home::class, 'home']);
+Route::get('/home', [home::class, 'home'])->name('home');
 Route::get('/login_', [LoginController::class, 'login_1']);
 Route::post('/login_', [LoginController::class, 'login_2']);
 Route::post('/register', [RegisterController::class, 'store']);

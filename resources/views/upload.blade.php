@@ -9,8 +9,7 @@
         @csrf
         <div class="mb-3">
             <label for="" class="form-label">Choose file</label>
-            <input type="file" class="form-control" name="image"  placeholder=""
-                aria-describedby="fileHelpId">
+            <input type="file" class="form-control" name="image" placeholder="" aria-describedby="fileHelpId">
             <div id="fileHelpId" class="form-text">Help text</div>
         </div>
         <button type="submit" class="btn btn-primary">Upload</button>
@@ -19,4 +18,5 @@
 
 
 
+@include('layouts.back_btn')
 @include('layouts.footer')
