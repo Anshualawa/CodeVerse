@@ -22,7 +22,7 @@
         <table class="table  table-hover table-secondary table-responsive">
             <thead>
                 <tr>
-                    <th scope="col">SN</th>
+                    <th scope="col">S.N.</th>
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
