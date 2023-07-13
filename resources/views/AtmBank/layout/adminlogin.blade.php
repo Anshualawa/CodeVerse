@@ -7,15 +7,15 @@
 
 <div style="background: url({{ asset('login.png') }});background-size:cover; padding:20px;">
 
-    <div class="container" >
+    <div class="container p-4" >
 
 
-        <div class="container p-5 m-2">
-            <div class="row justify-content-center align-items-center g-2 m-2 p-5 border rounded-4 shadow ">
-                <div class="col-4">
+        <div class="container p-5 m-5">
+            <div class="row justify-content-center align-items-center g-2 m-2 p-5  ">
+                <div class="col-xs-4  col-lg-4 bg-dark bg-opacity-25 border rounded-4 shadow">
                     <form action="{{ route('adminpost') }}" method="post">
                         @csrf
-                        <div class="mb-2 p-5 ">
+                        <div class="mb-1 p-5 ">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control " name="email" id="email"
                                 aria-describedby="emailHelpId" placeholder="enter register email id"

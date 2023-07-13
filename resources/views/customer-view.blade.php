@@ -22,6 +22,7 @@
         <table class="table  table-hover table-secondary table-responsive">
             <thead>
                 <tr>
+                    <th scope="col">SN</th>
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
@@ -34,10 +35,11 @@
                     <th class="text-center" scope="col" colspan="2">Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody><?php $i = 0; ?>
                 @foreach ($Customer as $item)
                     <tr>
-                        <td scope="row">{{ $item->customer_id }}</td>
+                        <td>{{ $i + 1 }}</td><?php $i += 1; ?>
+                        <td scope="row">202315{{ $item->customer_id }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->email }}</td>
                         <td>{{ $item->dob }}</td>
