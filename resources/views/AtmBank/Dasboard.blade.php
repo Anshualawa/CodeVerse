@@ -1,7 +1,7 @@
 @extends('layouts.header')
 
 @push('title')
-    <title>My Bank</title>
+    <title>Alawa Bank</title>
 @endpush
 
 
@@ -13,7 +13,7 @@
     <div class="row justify-content-center align-items-center text-center  p-5 g-2">
         <span>
             <img src="" class="img-fluid rounded-top" alt="">
-            <h1>My Bank of India</h1>
+            <h1>Alawa Bank of India</h1>
             {{-- <img src="https://bank.sbi/o/SBI-Theme/images/custom/logo.png" class="img-fluid rounded-top" alt=""> --}}
         </span>
     </div>
